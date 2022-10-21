@@ -1,0 +1,31 @@
+void walkTheLabyrinth()
+{
+    repeat(160)
+    {
+        move();
+    }
+}
+
+void move()
+{
+    if (!leftIsClear() &&  !rightIsClear() && frontIsClear())
+    {
+        moveForward();
+    }
+    else if (!leftIsClear() && rightIsClear() && !frontIsClear())
+    {
+        turnRight();
+    }
+    else if (leftIsClear() && !rightIsClear() && !frontIsClear())
+    {
+        turnLeft();
+    }
+    else if (leftIsClear() && !rightIsClear() &&frontIsClear())
+    {
+        moveForward();
+    }
+    else if (!leftIsClear() && rightIsClear() && frontIsClear())
+    {
+        moveForward();
+    }
+}

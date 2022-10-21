@@ -1,0 +1,33 @@
+void practiceHomeRun()
+{
+    repeat(4)
+    {
+        run();
+        collectandturn();    
+        
+    }
+}
+
+void run()
+{
+    repeat(8)
+    {
+        if(frontIsClear())
+        {
+            moveForward();
+        }
+    }
+}
+
+void collectandturn()
+{
+    if(beeperAhead())
+    {
+        moveForward();
+        if(onBeeper())
+        {
+            pickBeeper();
+            turnLeft();
+        }
+    }
+}

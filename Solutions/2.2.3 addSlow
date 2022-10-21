@@ -1,0 +1,70 @@
+void addSlow()
+{
+    while(frontIsClear())
+    {
+        start(); 
+        walkback();
+        increment();
+    }
+}
+
+void start()
+{
+    if (onBeeper() && beeperAhead())
+    {
+        pickBeeper();
+        moveForward();
+    }
+    else if (onBeeper() && !beeperAhead())
+    {
+        pickBeeper();
+        moveForward();
+    }
+    else if (!onBeeper() && beeperAhead())
+    {
+        dropBeeper();
+        moveForward();
+        pickBeeper();
+    }
+    else if (!onBeeper() && !beeperAhead())
+    {
+        while (frontIsClear() && !beeperAhead())
+        {
+            dropBeeper();
+            moveForward();
+        }
+        if (frontIsClear())
+        {
+            dropBeeper();
+            moveForward();
+            pickBeeper();   
+        }
+    }
+}
+
+void walkback()
+{
+    turnAround();
+    while (frontIsClear())
+    {
+        moveForward();
+    }
+    turnAround();
+}
+
+void increment()
+{
+    turnLeft();
+    moveForward();
+    turnRight();
+    while (onBeeper())
+    {
+        pickBeeper();
+        moveForward();
+    }
+    dropBeeper();
+    walkback();
+    turnRight();
+    moveForward();
+    turnLeft();
+}

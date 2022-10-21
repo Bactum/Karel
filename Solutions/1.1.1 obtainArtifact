@@ -1,0 +1,20 @@
+void obtainArtifact()
+{
+    turnRight();
+    walk();
+    pickBeeper();
+    walk();
+    dropBeeper();
+}
+
+void walk()
+{
+    moveForward();
+    turnLeft();
+    repeat(3)
+    {
+        moveForward();
+    }
+    turnLeft();
+    moveForward();
+}

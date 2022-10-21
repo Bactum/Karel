@@ -1,0 +1,22 @@
+void removeTheTiles()
+{
+    pickBeeper();
+    gettile();
+}
+
+void gettile()
+{
+    repeat(150)
+    {
+        if (beeperAhead() && frontIsClear())
+        {
+            moveForward();
+            pickBeeper();
+        }
+        else if (!beeperAhead() || !frontIsClear())
+        {
+            turnLeft();
+        }
+        
+    }
+}

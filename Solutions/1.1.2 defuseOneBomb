@@ -1,0 +1,16 @@
+void defuseOneBomb()
+{
+    walk();
+    turnAround();
+    pickBeeper();
+    walk();
+    turnAround();
+}
+
+void walk()
+{
+    repeat(9)
+    {
+        moveForward(); 
+    }
+}

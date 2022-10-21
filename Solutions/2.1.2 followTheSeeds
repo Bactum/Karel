@@ -1,0 +1,25 @@
+void followTheSeeds()
+{
+    repeat(11)
+    {
+        find();
+    }
+}
+
+void find()
+{
+    while (beeperAhead())
+    {
+        moveForward();
+        pickBeeper();
+    }
+    check();
+}
+
+void check()
+{
+    if (!beeperAhead() || !frontIsClear())
+    {
+        turnLeft();
+    }
+}

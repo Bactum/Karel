@@ -1,0 +1,40 @@
+void repairTheStreet()
+{
+    repeat(7)
+    {
+        if(!rightIsClear() && leftIsClear() && frontIsClear())
+        {
+            moveForward();
+            turnRight();
+            moveForward();
+            dropBeeper();
+            turnAround();
+            moveForward();
+            turnRight();
+            moveForward();
+        }
+        else if(rightIsClear() && frontIsClear())
+        {
+            turnRight();
+            moveForward();
+            dropBeeper();
+            turnAround();
+            moveForward();
+            turnRight();
+            moveForward();
+        }
+        else if(!rightIsClear() && frontIsClear())
+        {
+            moveForward();
+        }
+        else if(rightIsClear() && !frontIsClear())
+        {
+            turnRight();
+            moveForward();
+            dropBeeper();
+            turnAround();
+            moveForward();
+            turnRight();
+        }
+    }
+}

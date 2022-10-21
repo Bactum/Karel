@@ -1,0 +1,111 @@
+void addFast()
+{
+    repeat(8)
+    {
+        check();
+    }
+}
+
+void check()
+{
+    if (!onBeeper() && !beeperAhead())
+    {
+        none();
+    }
+    else if (onBeeper() && !beeperAhead())
+    {
+        one();
+    }
+    else if (!onBeeper() && beeperAhead())
+    {
+        one();
+    }
+    else if (onBeeper() && beeperAhead())
+    {
+        both();
+    }
+}
+
+void none()
+{
+    repeat(2)
+    {
+        moveForward();
+    }
+    checkcarry();
+    new();
+}
+
+void one()
+{
+    repeat(3)
+    {
+        moveForward();
+    }
+    dropBeeper();
+    turnAround();
+    moveForward();
+    turnAround();
+    checkcarry();
+    new();
+}
+
+void both()
+{
+    repeat(2)
+    {
+        moveForward();
+    }
+    turnRight();
+    moveForward();
+    dropBeeper();
+    turnAround();
+    moveForward();
+    turnRight();
+    checkcarry();
+    new();
+}
+
+void checkcarry()
+{
+    if (onBeeper() && !beeperAhead())
+    {
+        moveForward();
+        dropBeeper();
+        carry();
+    }
+    else if (!onBeeper() && !beeperAhead())
+    {
+        moveForward();
+        carry();
+    }
+    else if (onBeeper() && beeperAhead())
+    {
+        moveForward();
+        carry();
+        dropBeeper();
+    }
+    else if (!onBeeper() && beeperAhead())
+    {
+        moveForward();
+        carry();
+    }
+}
+
+void carry()
+{
+    repeat(2)
+    {
+        turnRight();
+        moveForward();
+    }
+}
+
+void new()
+{
+    while (frontIsClear())
+    {
+        moveForward();
+    }
+    turnAround();
+}

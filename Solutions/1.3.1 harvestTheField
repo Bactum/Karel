@@ -1,0 +1,48 @@
+void harvestTheField()
+{
+    pickupright();
+    moveForward();
+    turnLeft();
+    moveForward();
+    pickupleft();
+    moveForward();
+    turnRight();
+    moveForward();
+    pickupright();
+    moveForward();
+    turnLeft();
+    moveForward();
+    pickupleft();
+    
+}
+
+void pickupright()
+{
+    repeat(4)
+    {
+        if (beeperAhead())
+        {
+            moveForward();
+            pickBeeper();
+            turnRight();
+            moveForward();
+            turnLeft();
+        }
+        
+    }
+}
+
+void pickupleft()
+{
+    repeat(4)
+    {
+        if (beeperAhead())
+        {
+            moveForward();
+            pickBeeper();
+            turnLeft();
+            moveForward();
+            turnRight();
+        }
+    }
+}

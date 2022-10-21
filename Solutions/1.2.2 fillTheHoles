@@ -1,0 +1,17 @@
+void fillTheHoles()
+{
+    repeat(9)
+    {
+        if(!rightIsClear() && leftIsClear() && frontIsClear())
+        {
+            moveForward();
+            turnRight();
+            moveForward();
+            dropBeeper();
+            turnAround();
+            moveForward();
+            turnRight();
+            moveForward();
+        }
+    }
+}

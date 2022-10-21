@@ -1,0 +1,22 @@
+void mowTheLawn()
+{
+    checkbeeper();
+    
+}
+
+void checkbeeper()
+{
+    repeat(46)
+    {
+        if (beeperAhead())
+        {
+            moveForward();
+            pickBeeper();
+        }
+        else
+        {
+            turnLeft();
+        }
+        
+    }
+}

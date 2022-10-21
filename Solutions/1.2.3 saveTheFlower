@@ -1,0 +1,31 @@
+void saveTheFlower()
+{
+    moveForward();
+    pickBeeper();
+    turnLeft();
+    repeat(12)
+    {
+        checkright();
+        
+    }
+    dropBeeper();
+    turnRight();
+    repeat(12)
+    {
+        checkright();
+    }
+}
+
+void checkright()
+{
+    if (!rightIsClear())
+    {
+        moveForward();
+    }
+    else if (rightIsClear())
+    {
+        turnRight();
+        moveForward();
+        turnLeft();
+    }
+}

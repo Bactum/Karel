@@ -1,0 +1,36 @@
+void decrement()
+{
+    start(); 
+    
+}
+
+void start()
+{
+    if (onBeeper() && beeperAhead())
+    {
+        pickBeeper();
+        moveForward();
+    }
+    else if (onBeeper() && !beeperAhead())
+    {
+        pickBeeper();
+        moveForward();
+    }
+    else if (!onBeeper() && beeperAhead())
+    {
+        dropBeeper();
+        moveForward();
+        pickBeeper();
+    }
+    else if (!onBeeper() && !beeperAhead())
+    {
+        while (frontIsClear() && !beeperAhead())
+        {
+            dropBeeper();
+            moveForward();
+        }
+        dropBeeper();
+        moveForward();
+        pickBeeper();
+    }
+}
